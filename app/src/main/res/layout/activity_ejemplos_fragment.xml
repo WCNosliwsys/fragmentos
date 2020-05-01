@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Ejemplo1.MainActivity">
-    <Spinner
-        android:id="@+id/mispinner"
-        android:entries="@array/tipo"
+    android:gravity="center"
+    tools:context=".EjemplosFragment">
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <FrameLayout
-        android:id="@+id/fragmento"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="Fragment estatico"
+        android:onClick="fragmentestatico"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejemplo2"
+        android:onClick="ejemplo2"/>
+
 </LinearLayout>
