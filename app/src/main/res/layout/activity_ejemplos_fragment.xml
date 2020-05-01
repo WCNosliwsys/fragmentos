@@ -17,9 +17,10 @@
         android:layout_height="wrap_content"
         android:text="Ejemplo2"
         android:onClick="ejemplo2"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ejemplo3"
-        android:onClick="ejemplo3"/>
+        android:onClick="ejemplo3"
+        android:text="Ejemplo3" />
 </LinearLayout>
