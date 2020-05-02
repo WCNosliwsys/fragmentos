@@ -26,14 +26,20 @@ public class AdapterCorreoFragment extends RecyclerView.Adapter<AdapterCorreoFra
     public void onBindViewHolder(AdapterCorreoFragment.ViewHolder holder, final int i) {
         holder.titulo.setText(datos[i].getDe());
         holder.subtitutlo.setText(datos[i].getAsunto());
-        holder.itemView.setOnClickListener(new View.OnClickListener(){
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(micontext, DetalleCorreo.class);
-                intent.putExtra("texto",datos[i].getTexto());
-                intent.putExtra("de",datos[i].getDe());
-                intent.putExtra("asunto",datos[i].getAsunto());
-                micontext.startActivity(intent);
+                intent.putExtra("texto", datos[i].getTexto());
+                intent.putExtra("de", datos[i].getDe());
+                intent.putExtra("asunto", datos[i].getAsunto());
+                boolean hayDetalle =
+                        (((MainFragmentCorreo) micontext).getSupportFragmentManager().findFragmentById(R.id.FrgDetalle) != null);
+                if (hayDetalle) {
+                    ((MainFragmentCorreo) micontext).mostrarDetalle(datos[i].getTexto());
+                } else {
+                    micontext.startActivity(intent);
+                }
             }
         });
     }
